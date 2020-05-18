@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logg</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="page">
+	<h1 id="logg-heading">Learning & Implementation Logg </h1>
+
+	<menu-comp></menu-comp>
+
+	<post-input></post-input>
+
+    <div id="main-body">
+
+    	<h2> 03.07.2019 </h2>
+    	<p class="post">
+    		Today I got help from Mathias to fix the menu, which now works as intended. It is now hidden unless the "Menu" button is hovered over and hides when the mouse is moved. Try it!
+    	</p>
+
+    	<h2> 02.07.2019 </h2>
+    	<p class="post">
+    		Now the menu is in its own component and follows the page as you scroll. I also added a component to enter posts to the logg. Although it is not really active yet, I need to bind it to a display post component and figure out how to save the posts and such.
+    	</p>
+
+    	<h2> 01.07.2019 </h2>
+    	<p class="post">
+    		Today I managed to use v-for and v-bind to genereate the menu. Next step is to make it into a component. I tried to do that now, but for whatever reason could'nt. Syntax is the same as it was in component form, so there must be something in how I handeled the component.
+    	</p>
+
+    		<h2> 29.06.2019 </h2>
+    	<p class="post">
+    		Recently I completed the introductory Vue tutorial over at <a href="https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance"> the Vue mastery website </a>. After learning how to use Vue the current plan is to move these posts and main body div into components, and also make it possible to give logg entries from the site. I also want to find a "watermark" for dates, but for now you will just have to believe me when I say this was written on 29.th of June, 2019. Before the implementation of any javascript or Vue. <br>
+    		<br>
+    		The first step now is to make a dynamic component for page navigation!
+    	</p>
+
+
+    </div>
+	<script src="https://unpkg.com/vue" ></script>
+	<script src="main.js"></script>
+</body>
+</html>
