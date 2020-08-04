@@ -11,7 +11,7 @@
 			</span>
 		</div>
 		<div class="todos">
-			<div @dblclick="onDblClick(todo)" v-for="todo in allTodos" :key="todo.id" class="todo" v-bind:class="{'is-complete':todo.completed}">
+			<div @click="onDblClick(todo)" v-for="todo in allTodos" :key="todo.id" class="todo" v-bind:class="{'is-complete':todo.completed}">
 				{{ todo.title }}
 				<i id="trash" @click="deleteTodo(todo.id)" class="fas fa-trash-alt"></i>
 			</div>

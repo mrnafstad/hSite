@@ -14,7 +14,7 @@
 			<AddTodo />
 			<FilterTodos />
 			<div class="todos">
-				<div @dblclick="onDblClick(todo)" v-for="(todo, idx) in allTodos" :key="idx" class="todo" v-bind:class="{'is-complete':todo.completed}">
+				<div @click="onDblClick(todo)" v-for="(todo, idx) in allTodos" :key="idx" class="todo" v-bind:class="{'is-complete':todo.completed}">
 					{{ todo.title }}
 					<i @click="deleteTodo(todo.id)" class="fas fa-trash-alt"></i>
 				</div>

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Menu />
+    <SignLogIn />
     <div id="nav">
       <router-link to="/">Home</router-link> 
     </div>
@@ -10,11 +11,13 @@
 
 <script>
 import Menu from './components/Menu.vue'
+import SignLogIn from './components/SignLogIn.vue'
 
 export default {
   name: 'App',
   components: {
-    Menu
+    Menu,
+    SignLogIn
   }
 }
 </script>

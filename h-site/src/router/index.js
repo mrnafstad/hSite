@@ -22,6 +22,11 @@ Vue.use(VueRouter)
     path: '/quiz',
     name: 'Quiz',
     component: () => import('../views/QuizChoose.vue')
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../views/Profile.vue')
   }
 ]
 

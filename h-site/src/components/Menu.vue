@@ -1,5 +1,5 @@
 <template>
- <div @mouseover="active=true" @mouseleave="active=false">
+ <div @mouseover="active=true" @mouseleave="active=false" id="full">
   <div id="contents-button" v-if="!active">
    <button id="menu">Menu</button>
   </div>
@@ -32,7 +32,12 @@ export default {
 					id: 3,
 					name: "Quiz",
 					htmlRef: "/quiz"
-				}],
+				},
+        {
+          id: 4,
+          name: "Profile",
+          htmlRef: "/profile"
+        }],
 			active: false		
 		}
 	},
@@ -49,6 +54,11 @@ export default {
 </script>
 
 <style>
+#full {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+}
 #contents {
   position: relative;
   left: 2px;
@@ -61,7 +71,6 @@ export default {
   }
 #menu {
   position: relative;
-  left: -10rem;
   top: 5px;
   font-size: 1.25em;
   padding: 9px;

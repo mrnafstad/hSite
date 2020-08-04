@@ -16,8 +16,10 @@ firebase.initializeApp(firebaseConfig)
 
 const db = firebase.firestore()
 const todos = db.collection('todos')
+const auth = firebase.auth()
 
 export default {
   db,
+  auth,
   todos
 }
