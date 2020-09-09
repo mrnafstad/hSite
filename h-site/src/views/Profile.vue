@@ -2,10 +2,10 @@
 	<div>
 		<div v-if="auth">
 			<p>Email: {{ user.email }}</p>
-			<p v-if="user.displayName">Name: {{ user.displayName }}</p>
+			<p v-if="user.displayName">Username: {{ user.displayName }}</p>
 			<div v-if="!user.displayName">Your username is not set:
 				<p>
-					<input v-model="username" placeholder="Username">
+					<input v-model="username" placeholder="Update not available at the moment">
 					<button id="setname" @click="setUsername">Set username</button></p>
 			</div>
 			<button v-if="!verify" id="delete" @click="verifyDelete">Delete account</button>

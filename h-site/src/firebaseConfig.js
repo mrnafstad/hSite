@@ -16,10 +16,15 @@ firebase.initializeApp(firebaseConfig)
 
 const db = firebase.firestore()
 const todos = db.collection('todos')
+const blog = db.collection('blog')
 const auth = firebase.auth()
+
+const increment = firebase.firestore.FieldValue.increment(1)
 
 export default {
   db,
   auth,
-  todos
+  todos,
+  blog,
+  increment
 }

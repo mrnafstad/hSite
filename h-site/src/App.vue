@@ -1,12 +1,14 @@
 <template>
-  <div id="app">
-    <Menu />
-    <SignLogIn />
-    <div id="nav">
-      <router-link to="/">Home</router-link> 
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<div id="header">
+			<Menu />
+			<router-link to="/">Home</router-link>
+			<SignLogIn />
+		</div>
+		<div id="nav">
+			<router-view/>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -14,44 +16,46 @@ import Menu from './components/Menu.vue'
 import SignLogIn from './components/SignLogIn.vue'
 
 export default {
-  name: 'App',
-  components: {
-    Menu,
-    SignLogIn
-  }
+	name: 'App',
+	components: {
+		Menu,
+		SignLogIn
+	}
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  background-color: lightgrey;
-  width: 500px;
-  padding: 30px;
-  border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin-left: auto;
+	margin-right: auto;
+}
+#header {
+	background-color: black;
+	width: 100%;
+	margin: auto;
 }
 
 body {
-  background-color: silver
+	background-color: lightgrey
 }
 
 #nav {
-  padding: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
 }
 
 #nav a {
-  font-weight: bold;
-  color: #2c3e50;
+	font-weight: bold;
+	color: #2c3e50;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+	color: #42b983;
 }
 </style>

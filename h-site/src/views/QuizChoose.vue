@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<h1>Select a category!</h1>
 		<Quiz v-if="selected != null"
 			:field="fields.find(field => field.value === selected).text"
 			:url="fields.find(field => field.value === selected).url" />

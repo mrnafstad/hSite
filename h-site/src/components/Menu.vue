@@ -37,6 +37,11 @@ export default {
           id: 4,
           name: "Profile",
           htmlRef: "/profile"
+        },
+        {
+          id: 5,
+          name: "Blogg",
+          htmlRef: "/blog"
         }],
 			active: false		
 		}
@@ -65,7 +70,7 @@ export default {
   top: 5px;
   font-size: 1em;
   height: var(--nav-height);
-  background-color: lightgrey;
+  background-color: white;
   width: 165px;
   border-radius: 8px;
   }
@@ -74,17 +79,17 @@ export default {
   top: 5px;
   font-size: 1.25em;
   padding: 9px;
-  font-family: Trebuchet MS, serif;
   height: var(--nav-height);
   border-radius: 8px;
-  background-color: lightgrey;
+  background-color: black;
   width: 90px;
+  color: blue;
 }
 ul {
   text-align: left;
   text-decoration: none;
   color: black;
-  background-color: lightgrey;
+  background-color: snow;
   list-style-type: none;
   font-family: Trebuchet MS, serif;
   }

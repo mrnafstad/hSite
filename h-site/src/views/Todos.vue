@@ -3,7 +3,7 @@
 		<div v-if="loaded">
 			<h3>Todos</h3>
 			<div class="legend">
-				<span>Double click to mark as complete</span>
+				<span>Click to mark as complete</span>
 				<span>
 					<span class="incomplete-box"></span> = Incomplete
 				</span>
