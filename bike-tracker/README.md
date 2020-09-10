@@ -1,4 +1,4 @@
-# bike-tracker
+# map-app
 
 ## Project setup
 ```

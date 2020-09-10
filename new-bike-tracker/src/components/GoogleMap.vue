@@ -2,13 +2,13 @@
   <v-container>
      <v-overlay :value="showAppInfo">
         <v-card raised light>
-            This is a tracking app for Oslo city bikes
-            <br />
-        <v-btn icon @click="toggleAppInfo">
-          <v-icon>mdi-check</v-icon>
-        </v-btn>
-      </v-card>
-    </v-overlay>
+            <p>This is a simple tracking app for Oslo city bikes</p>           
+            <p>Stationdata is updated every minute</p>           
+            <v-btn icon @click="toggleAppInfo">
+              <v-icon>mdi-check</v-icon>
+            </v-btn>
+        </v-card>
+      </v-overlay>
 
     <v-overlay :value="showStationInfo">
       <v-card raised light>
@@ -28,9 +28,8 @@
     </v-overlay>
     <v-overlay :value="user.show">
       <v-card raised light>
-        <v-list-item>
-          
-        <v-list-item-title>{{ currentInfo.name }}</v-list-item-title>
+        <v-list-item>   
+        <v-list-item-title>{{ user.info }}</v-list-item-title>
         <v-spacer></v-spacer>
         <v-btn icon @click="user.show = !user.show">
           <v-icon>mdi-check</v-icon>
@@ -43,19 +42,13 @@
       :zoom="12"
       style="width:100%;  height: 90vh;"
     >
-      <gmap-marker
-        :key="index"
-        v-for="(m, index) in stations"
-        :position="m.pos"
-        @click="toggleStation(m)"
-        :clickable="true"
-      >
-      </gmap-marker>
-    <gmap-marker 
-      :position="center" 
+    <gmap-marker
+      :key="index"
+      v-for="(m, index) in stationsFiltered"
+      :position="m.pos"
+      @click="toggleStation(m)"
       :clickable="true"
-      @click="user.show = !user.show"
-      >
+    >
     </gmap-marker>
     </gmap-map>
   </v-container>
@@ -69,7 +62,7 @@ export default {
     return {
         // default to Montreal to keep it simple
         // change this to whatever makes sense
-        center: { lat: 45.508, lng: -73.587 },
+        center: { lat: 59.90, lng: 10.73 },
         currentPlace: null,
         showInfo: true,
         currentInfo: {
@@ -113,7 +106,7 @@ export default {
     }
   },
   computed: {
-      ...mapGetters(['stations', 'showAppInfo', 'showStationInfo'])
+      ...mapGetters(['stationsFiltered', 'showAppInfo', 'showStationInfo', 'showUnavailable'])
   },
     async created() {
       await this.getStations()

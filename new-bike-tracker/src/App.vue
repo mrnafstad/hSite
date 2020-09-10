@@ -7,6 +7,18 @@
     >
       Citybike-tracker
       <v-spacer />
+      <v-switch
+        @click="toggleDisplay"
+        :label="'Show empty stations'"
+        dark
+        />
+      <v-spacer />
+      <v-switch
+        @click="toggleFull"
+        :label="'Show full stations'"
+        dark
+        />
+      <v-spacer />
       <v-btn @click="toggleAppInfo" >Info</v-btn>
     </v-app-bar>
 
@@ -30,7 +42,7 @@ export default {
     ...mapGetters(['showAppInfo']),
   },
   methods: {
-    ...mapActions(['toggleAppInfo'])
+    ...mapActions(['toggleAppInfo', 'toggleDisplay', 'toggleFull'])
   },
 
   data: () => ({
