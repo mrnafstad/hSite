@@ -5,22 +5,38 @@
       color="dark"
       dark
     >
+    <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       Citybike-tracker
-      <v-spacer />
-      <v-switch
-        @click="toggleDisplay"
-        :label="'Show empty stations'"
-        dark
-        />
-      <v-spacer />
-      <v-switch
-        @click="toggleFull"
-        :label="'Show full stations'"
-        dark
-        />
       <v-spacer />
       <v-btn @click="toggleAppInfo" >Info</v-btn>
     </v-app-bar>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+    >      
+    <v-list
+      >
+        <v-list-item-group
+        >
+      <v-list-item>
+    <v-switch
+        @click="toggleDisplay"
+        :label="'Hide empty stations'"
+        ligth
+        />
+      </v-list-item>
+      <v-list-item>
+      <v-switch
+        @click="toggleFull"
+        :label="'Hide full stations'"
+        light
+        />
+      </v-list-item>
+        </v-list-item-group>
+    </v-list>
+      </v-navigation-drawer>
 
     <v-main class="text-center">
       <GoogleMap />
@@ -46,7 +62,11 @@ export default {
   },
 
   data: () => ({
-    //
+    drawer: false
   }),
+
+  created() {
+    this.toggleDisplay()
+  }
 };
 </script>

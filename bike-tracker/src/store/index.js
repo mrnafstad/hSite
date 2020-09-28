@@ -70,16 +70,26 @@ export default new Vuex.Store({
   },
   getters: {
     stationsFiltered: (state) => {
-      if (!state.onlyAvailable) {
-        return state.stations.filter(stat => { return stat.available > 0 })
-      } else if (state.showfull) {
-        return state.stations.filter(stat => { return stat.available < stat.capacity })
+      //fiks filter
+      var returnStat
+      if (!state.onlyAvailable && !state.showFull) {
+        returnStat = state.stations.filter(stat => { return stat.available > 0 })
+      } else if (state.onlyAvailable && !state.showfull) {
+        returnStat = state.stations
+        //returnStat = state.stations.filter(stat => { return stat.available < stat.capacity })
+      } else if (!state.onlyAvailable && state.showFull){
+        returnStat = state.stations.filter(stat => { return stat.available < stat.capacity && stat.available > 0 })
+      } else if (state.onlyAvailable && state.showFull) {
+        returnStat = state.stations.filter(stat => { return stat.available < stat.capacity })
       } else {
-        return state.stations
+        returnStat = state.stations
       }
+      returnStat.forEach(stat => console.log(stat.name + ": " + (stat.available - stat.capacity)))
+      return returnStat
     },
     showAppInfo: (state) => state.showAppInfo,
     showStationInfo: (state) => state.showStationInfo,
-    showUnavailable: (state) => state.onlyAvailable
+    showUnavailable: (state) => state.onlyAvailable,
+    showFull: (state) => state.showFull
   }
 })

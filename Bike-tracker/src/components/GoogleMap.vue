@@ -2,11 +2,18 @@
   <v-container>
      <v-overlay :value="showAppInfo">
         <v-card raised light>
-            <p>This is a simple tracking app for Oslo city bikes</p>           
-            <p>Stationdata is updated every minute</p>           
+          <v-list>
+          <v-list-item >
+            This is a simple tracking app for Oslo city bikes
+            </v-list-item>             
+            <v-list-item>Stationdata is updated every minute</v-list-item>   
+            <v-list-item>Toggle filters in the menu to the right</v-list-item>
+            </v-list>
+            <v-card-actions>     
             <v-btn icon @click="toggleAppInfo">
               <v-icon>mdi-check</v-icon>
             </v-btn>
+            </v-card-actions>
         </v-card>
       </v-overlay>
 
@@ -41,6 +48,7 @@
       :center="center"
       :zoom="12"
       style="width:100%;  height: 90vh;"
+      :icon="mdi-location-on"
     >
     <gmap-marker
       :key="index"
@@ -112,7 +120,7 @@ export default {
     }
   },
   computed: {
-      ...mapGetters(['stationsFiltered', 'showAppInfo', 'showStationInfo', 'showUnavailable'])
+      ...mapGetters(['stationsFiltered', 'showAppInfo', 'showStationInfo', 'showUnavailable', 'showFull'])
   },
     async created() {
       await this.getStations()

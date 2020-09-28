@@ -1,4 +1,4 @@
-# h-site
+# base-template-vuetify
 
 ## Project setup
 ```

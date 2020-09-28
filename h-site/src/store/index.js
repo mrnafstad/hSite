@@ -1,15 +1,15 @@
-import Vuex from 'vuex';
-import Vue from 'vue';
-import todos from './modules/todos'
-import users from './modules/users'
-import blog from './modules/blog'
+import Vue from "vue";
+import Vuex from "vuex";
+import users from "./modules/users";
+import blog from "./modules/blog";
+import projects from "./modules/projects"
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-	modules: {
-		todos,
-		users,
-		blog
-	}
+  modules: {
+    users,
+    blog,
+    projects,
+  },
 });
